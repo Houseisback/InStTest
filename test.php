@@ -35,7 +35,7 @@ $query = "SELECT g.id, g.name FROM (
     SELECT goods_id FROM goods_tags
     WHERE tags_id IN (SELECT id FROM tags)
     GROUP BY goods_id HAVING COUNT(*) = (SELECT COUNT(id) FROM tags)
-) AS go JOIN goods AS g ON g.id = go.goods_id";
+) AS gs JOIN goods AS g ON g.id = gs.goods_id";
 
 // 6 Выбрать без join-ов и подзапросов все департаменты,
 // в которых есть мужчины, и все они (каждый)

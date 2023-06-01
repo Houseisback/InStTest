@@ -6,10 +6,10 @@ class Concept
 
     private $client;
 
-    public function __construct(TokenStoreInterface $tokenStore)
+    public function __construct(TokenStoreInterface $tokenStore, Client $client)
     {
         $this->tokenStore = $tokenStore;
-        $this->client = new \GuzzleHttp\Client();
+        $this->client = $client;
     }
 
     public function setTokenStore(TokenStoreInterface $tokenStore)
